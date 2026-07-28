@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+<div class="admin-wrap">
+  <div class="admin-header">
+    <h1>Site Admin</h1>
+    <div>
+      <a href="/" target="_blank" class="btn btn-outline">View Site</a>
+      <form action="/admin/logout" method="POST" style="display:inline">
+        <button class="btn btn-outline" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+
+  <% if (saved) { %><div class="flash">Saved: <%= saved %></div><% } %>
+
+  <!-- HERO -->
+  <details open class="panel">
+    <summary>Hero Section</summary>
+    <form method="POST" action="/admin/update/hero">
+      <label>Brand Name</label>
+      <input name="brandName" value="<%= site.brandName %>">
+      <label>Badge Text</label>
+      <input name="heroBadge" value="<%= site.heroBadge %>">
+      <label>Title (before highlight)</label>
+      <input name="heroTitle" value="<%= site.heroTitle %>">
+      <label>Highlighted Text</label>
+      <input name="heroHighlight" value="<%= site.heroHighlight %>">
+      <label>Subtitle</label>
+      <textarea name="heroSubtitle"><%= site.heroSubtitle %></textarea>
+      <label>Primary Button Text</label>
+      <input name="heroButtonText" value="<%= site.heroButtonText %>">
+      <label>Secondary Button Text</label>
+      <input name="heroSecondaryButtonText" value="<%= site.heroSecondaryButtonText %>">
+      <label>Trust Text</label>
+      <input name="trustText" value="<%= site.trustText %>">
+      <label>Leads Generated Text</label>
+      <input name="leadsGeneratedText" value="<%= site.leadsGeneratedText %>">
+
+      <label style="margin-top:14px;">Floating Card 1 (top-left, over hero image)</label>
+      <div class="field-row">
+        <input name="heroStat1Label" value="<%= site.heroStat1Label %>" placeholder="Label">
+        <input name="heroStat1Value" value="<%= site.heroStat1Value %>" placeholder="Value">
+        <input name="heroStat1Sub" value="<%= site.heroStat1Sub %>" placeholder="Sub text">
+      </div>
+      <label>Floating Card 2 (bottom-right, over hero image)</label>
+      <div class="field-row">
+        <input name="heroStat2Label" value="<%= site.heroStat2Label %>" placeholder="Label">
+        <input name="heroStat2Value" value="<%= site.heroStat2Value %>" placeholder="Value">
+        <input name="heroStat2Sub" value="<%= site.heroStat2Sub %>" placeholder="Sub text">
+      </div>
+      <button class="btn btn-primary" type="submit">Save Hero</button>
+    </form>
+    <form method="POST" action="/admin/upload/hero-image" enctype="multipart/form-data" class="upload-form">
+      <label>Hero Image</label>
+      <img src="<%= site.heroImage %>" class="preview" onerror="this.style.display='none'">
+      <input type="file" name="heroImage" accept="image/*" required>
+      <button class="btn btn-primary" type="submit">Upload Hero Image</button>
+    </form>
+  </details>
+
+  <!-- PROBLEM -->
+  <details class="panel">
+    <summary>Problem Section (3 cards)</summary>
+    <form method="POST" action="/admin/update/problem">
+      <label>Eyebrow Label</label>
+      <input name="problemEyebrow" value="<%= site.problemEyebrow %>">
+      <label>Heading (main part)</label>
+      <input name="problemHeading" value="<%= site.problemHeading %>">
+      <label>Heading (highlighted part, after the dash)</label>
+      <input name="problemHeadingHighlight" value="<%= site.problemHeadingHighlight %>">
+      <label>Subtitle</label>
+      <textarea name="problemSubtitle"><%= site.problemSubtitle %></textarea>
+      <label>Cards (JSON array — edit icon/title/desc)</label>
+      <textarea class="json-box" name="problemCards"><%= JSON.stringify(site.problemCards, null, 2) %></textarea>
+      <button class="btn btn-primary" type="submit">Save Problem Section</button>
+    </form>
+  </details>
+
+  <!-- SOLUTION -->
+  <details class="panel">
+    <summary>Solution Section</summary>
+    <form method="POST" action="/admin/update/solution">
+      <label>Eyebrow Label</label>
+      <input name="solutionEyebrow" value="<%= site.solutionEyebrow %>">
+      <label>Heading</label>
+      <input name="solutionHeading" value="<%= site.solutionHeading %>">
+      <label>Description</label>
+      <textarea name="solutionText"><%= site.solutionText %></textarea>
+      <label>Checklist Points (one per line)</label>
+      <textarea name="solutionPoints"><%= (site.solutionPoints || []).join('\n') %></textarea>
+      <button class="btn btn-primary" type="submit">Save Solution</button>
+    </form>
+  </details>
+
+  <!-- WHY CHOOSE -->
+  <details class="panel">
+    <summary>Why Choose Me (4 cards)</summary>
+    <form method="POST" action="/admin/update/whychoose">
+      <label>Eyebrow Label</label>
+      <input name="whyChooseEyebrow" value="<%= site.whyChooseEyebrow %>">
+      <label>Heading</label>
+      <input name="whyChooseHeading" value="<%= site.whyChooseHeading %>">
+      <label>Subtitle</label>
+      <textarea name="whyChooseSubtitle"><%= site.whyChooseSubtitle %></textarea>
+      <label>Cards (JSON array — icon/title/desc/badge)</label>
+      <textarea class="json-box" name="whyChooseCards"><%= JSON.stringify(site.whyChooseCards, null, 2) %></textarea>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </details>
+
+  <!-- PROCESS -->
+  <details class="panel">
+    <summary>Process Steps (4 steps, dark section)</summary>
+    <form method="POST" action="/admin/update/process">
+      <label>Eyebrow Label</label>
+      <input name="processEyebrow" value="<%= site.processEyebrow %>">
+      <label>Heading</label>
+      <input name="processHeading" value="<%= site.processHeading %>">
+      <label>Subtitle</label>
+      <textarea name="processSubtitle"><%= site.processSubtitle %></textarea>
+      <label>Steps (JSON array — number/icon/title/desc)</label>
+      <textarea class="json-box" name="processSteps"><%= JSON.stringify(site.processSteps, null, 2) %></textarea>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </details>
+
+  <!-- RESULTS -->
+  <details class="panel">
+    <summary>Results, Stats & Case Studies</summary>
+    <form method="POST" action="/admin/update/results">
+      <label>Eyebrow Label</label>
+      <input name="resultsEyebrow" value="<%= site.resultsEyebrow %>">
+      <label>Heading</label>
+      <input name="resultsHeading" value="<%= site.resultsHeading %>">
+      <label>Subtitle</label>
+      <textarea name="resultsSubtitle"><%= site.resultsSubtitle %></textarea>
+      <label>Top Stats (JSON array — icon/label/value)</label>
+      <textarea class="json-box" name="resultsStats"><%= JSON.stringify(site.resultsStats, null, 2) %></textarea>
+      <label>Case Studies (JSON array — tag/title/subtitle/bars[10 numbers 1-10]/stats[{label,value,change}])</label>
+      <textarea class="json-box" name="caseStudies"><%= JSON.stringify(site.caseStudies, null, 2) %></textarea>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </details>
+
+  <!-- TESTIMONIALS -->
+  <details class="panel">
+    <summary>Testimonials</summary>
+    <form method="POST" action="/admin/update/testimonials">
+      <label>Eyebrow Label</label>
+      <input name="testimonialsEyebrow" value="<%= site.testimonialsEyebrow %>">
+      <label>Heading</label>
+      <input name="testimonialsHeading" value="<%= site.testimonialsHeading %>">
+      <label>Testimonials (JSON array — quote/name/role/tag)</label>
+      <textarea class="json-box" name="testimonials"><%= JSON.stringify(site.testimonials, null, 2) %></textarea>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </details>
+
+  <!-- ABOUT -->
+  <details class="panel">
+    <summary>About Me</summary>
+    <form method="POST" action="/admin/update/about">
+      <label>Eyebrow Label</label>
+      <input name="aboutEyebrow" value="<%= site.aboutEyebrow %>">
+      <label>Heading</label>
+      <input name="aboutHeading" value="<%= site.aboutHeading %>">
+      <label>Bio Text</label>
+      <textarea name="aboutText"><%= site.aboutText %></textarea>
+      <label>Years of Experience</label>
+      <input name="experienceYears" value="<%= site.experienceYears %>">
+      <label>Checklist (one per line)</label>
+      <textarea name="aboutChecklist"><%= (site.aboutChecklist || []).join('\n') %></textarea>
+      <button class="btn btn-primary" type="submit">Save About</button>
+    </form>
+    <form method="POST" action="/admin/upload/about-image" enctype="multipart/form-data" class="upload-form">
+      <label>About Photo</label>
+      <img src="<%= site.aboutImage %>" class="preview" onerror="this.style.display='none'">
+      <input type="file" name="aboutImage" accept="image/*" required>
+      <button class="btn btn-primary" type="submit">Upload Photo</button>
+    </form>
+  </details>
+
+  <!-- CONTACT -->
+  <details class="panel">
+    <summary>Contact / CTA / Footer</summary>
+    <form method="POST" action="/admin/update/contact">
+      <label>Eyebrow Label</label>
+      <input name="contactEyebrow" value="<%= site.contactEyebrow %>">
+      <label>Heading</label>
+      <input name="contactHeading" value="<%= site.contactHeading %>">
+      <label>Subtitle</label>
+      <textarea name="contactSubtitle"><%= site.contactSubtitle %></textarea>
+      <label>Checklist (one per line)</label>
+      <textarea name="contactChecklist"><%= (site.contactChecklist || []).join('\n') %></textarea>
+      <label>WhatsApp Number (with country code, digits only — e.g. 919876543210)</label>
+      <input name="whatsappNumber" value="<%= site.whatsappNumber %>" placeholder="919876543210">
+      <label>Phone (displayed on page)</label>
+      <input name="phone" value="<%= site.phone %>">
+      <label>Email</label>
+      <input name="email" value="<%= site.email %>">
+      <label>Footer Text</label>
+      <textarea name="footerText"><%= site.footerText %></textarea>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </details>
+
+  <!-- BACKUP -->
+  <details class="panel">
+    <summary>Backup Content</summary>
+    <p class="hint">Content is stored in a file on the server. Download a backup after making changes — restore it if you ever redeploy and lose data.</p>
+    <a href="/admin/export" class="btn btn-outline">Download Backup (JSON)</a>
+    <form method="POST" action="/admin/import" enctype="multipart/form-data" class="upload-form">
+      <label>Restore from Backup File</label>
+      <input type="file" name="backupFile" accept="application/json" required>
+      <button class="btn btn-primary" type="submit">Restore</button>
+    </form>
+  </details>
+
+</div>
+</body>
+</html>

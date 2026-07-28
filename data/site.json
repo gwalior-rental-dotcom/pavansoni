@@ -1,0 +1,247 @@
+{
+  "brandName": "Pawan Soni",
+  "navLinks": ["About Me", "Why Me", "Process", "Results", "Testimonials"],
+  "heroBadge": "Real Estate Lead Generation Expert",
+  "heroTitle": "Ready to Supercharge Your Real Estate Business with",
+  "heroHighlight": "High-Quality Leads",
+  "heroSubtitle": "Ek lead generation specialist jo aapko consistent, qualified prospects deliver karta hai — taaki aapka time dead-end follow-ups mein na jaaye, aur focus sirf deals close karne par rahe.",
+  "heroButtonText": "Request A Call Back",
+  "heroSecondaryButtonText": "Case Studies",
+  "heroImage": "/uploads/1785066084822-78752076.jpg",
+  "heroStat1Label": "Lead conversion",
+  "heroStat1Value": "+38%",
+  "heroStat1Sub": "vs last quarter",
+  "heroStat2Label": "Qualified leads / mo",
+  "heroStat2Value": "127",
+  "heroStat2Sub": "avg. per client",
+  "trustText": "Trusted by 40+ Clients",
+  "leadsGeneratedText": "2,400+ leads generated",
+  "problemEyebrow": "THE PROBLEM",
+  "problemHeading": "Most clients don't have a lead problem",
+  "problemHeadingHighlight": "they have a qualification problem",
+  "problemSubtitle": "The real estate market is full of opportunity. The challenge is reaching the right people, at the right time, with a message that actually converts.",
+  "problemCards": [
+    {
+      "icon": "🔍",
+      "title": "Struggling to find qualified leads",
+      "desc": "You're spending on ads or cold outreach, but the prospects that come through aren't ready to sell."
+    },
+    {
+      "icon": "⏱️",
+      "title": "No time to chase dead ends",
+      "desc": "Your schedule is packed with showings and closings. Prospecting falls to the bottom of the list every week."
+    },
+    {
+      "icon": "📉",
+      "title": "Inconsistent pipeline",
+      "desc": "Some months are flush, others are dry. You can't predict revenue, and the feast-or-famine cycle is exhausting."
+    }
+  ],
+  "solutionEyebrow": "THE SOLUTION",
+  "solutionHeading": "A data-driven system that puts qualified prospects in your pipeline — predictably",
+  "solutionText": "I combine targeted advertising, smart segmentation, and nurture sequences built specifically for real estate. The result: leads who already know what they want and are ready to talk.",
+  "solutionPoints": [
+    "Pre-qualified prospects matched to your farm area and price point",
+    "Done-for-you campaigns so you stay focused on closing",
+    "A predictable, reliable pipeline you can forecast around"
+  ],
+  "whyChooseEyebrow": "WHY CHOOSE ME",
+  "whyChooseHeading": "Four reasons clients trust me with their pipeline",
+  "whyChooseSubtitle": "Generalist marketers guess. I measure, refine, and deliver — because in real estate, an empty pipeline means an empty paycheck.",
+  "whyChooseCards": [
+    {
+      "icon": "🏠",
+      "title": "Specialized in Real Estate",
+      "desc": "I work exclusively with real estate clients. That means I understand farm areas, listing cycles, and buyer intent — not generic B2B funnels.",
+      "badge": "100% real estate focus"
+    },
+    {
+      "icon": "📊",
+      "title": "Proven Track Record",
+      "desc": "Over 2,400 leads generated and $180M+ in influenced transaction volume across 40+ clients in the last 24 months.",
+      "badge": "2,400+ leads delivered"
+    },
+    {
+      "icon": "📈",
+      "title": "Data-Driven Strategies",
+      "desc": "Every campaign is measured on cost-per-lead, lead-to-appointment, and appointment-to-close. No vanity metrics — just revenue math.",
+      "badge": "38% avg. conversion lift"
+    },
+    {
+      "icon": "🤝",
+      "title": "Personalized Approach",
+      "desc": "No templates. Each campaign is built around your market, your price point, and your personality so leads feel like they already know you.",
+      "badge": "Tailored to you"
+    }
+  ],
+  "processEyebrow": "THE PROCESS",
+  "processHeading": "A clear path from first call to consistent closings",
+  "processSubtitle": "No black boxes. You'll always know what's happening, why it's happening, and what it's producing.",
+  "processSteps": [
+    {
+      "number": "01",
+      "icon": "📞",
+      "title": "Discovery Call",
+      "desc": "We dig into your market, goals, and current pipeline. I learn what makes your business tick before touching a single ad."
+    },
+    {
+      "number": "02",
+      "icon": "🧭",
+      "title": "Strategy Development",
+      "desc": "You get a custom lead-gen plan: audience, channels, offer, and budget — mapped to your closing capacity."
+    },
+    {
+      "number": "03",
+      "icon": "🚀",
+      "title": "Campaign Launch",
+      "desc": "I build the ads, landing pages, and nurture sequences, then launch. You stay focused on clients while the system fills up."
+    },
+    {
+      "number": "04",
+      "icon": "📈",
+      "title": "Optimization & Reporting",
+      "desc": "Weekly optimization, transparent reporting, and a monthly review call. We double down on what works and cut what doesn't."
+    }
+  ],
+  "resultsEyebrow": "RESULTS & CASE STUDIES",
+  "resultsHeading": "Numbers that talk louder than promises",
+  "resultsSubtitle": "Anonymized for client privacy — the results are very real.",
+  "resultsStats": [
+    {
+      "icon": "👥",
+      "label": "Leads generated",
+      "value": "2,400+"
+    },
+    {
+      "icon": "💲",
+      "label": "Influenced volume",
+      "value": "$180M+"
+    },
+    {
+      "icon": "🎯",
+      "label": "Avg. conversion lift",
+      "value": "38%"
+    },
+    {
+      "icon": "🚀",
+      "label": "Avg. ROI",
+      "value": "4.2x"
+    }
+  ],
+  "caseStudies": [
+    {
+      "tag": "BOUTIQUE BROKERAGE · AUSTIN, TX",
+      "title": "From 8 to 31 closings in one quarter",
+      "subtitle": "184 leads in 10 weeks",
+      "bars": [
+        3,
+        4,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        10
+      ],
+      "stats": [
+        {
+          "label": "Cost per qualified lead",
+          "value": "$24",
+          "change": "-46%"
+        },
+        {
+          "label": "Appointment set rate",
+          "value": "29%",
+          "change": "+2.4x"
+        },
+        {
+          "label": "Closings",
+          "value": "31",
+          "change": "+267%"
+        }
+      ]
+    },
+    {
+      "tag": "SOLO AGENT · PHOENIX, AZ",
+      "title": "Built a $4.2M listing pipeline in 90 days",
+      "subtitle": "87 seller leads in 12 weeks",
+      "bars": [
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "stats": [
+        {
+          "label": "Cost per qualified lead",
+          "value": "$31",
+          "change": "-38%"
+        },
+        {
+          "label": "Listing appointments",
+          "value": "22",
+          "change": "+3.1x"
+        },
+        {
+          "label": "Closed volume",
+          "value": "$4.2M",
+          "change": "+215%"
+        }
+      ]
+    }
+  ],
+  "testimonialsEyebrow": "TESTIMONIALS",
+  "testimonialsHeading": "What clients say after the pipeline fills up",
+  "testimonials": [
+    {
+      "quote": "Pawan rebuilt our entire lead pipeline in under a month. We went from scrambling for showings to turning away prospects because our calendar was full.",
+      "name": "Rahul S.",
+      "role": "Project Owner, Gwalior",
+      "tag": "31 closings in one quarter"
+    },
+    {
+      "quote": "I tried three different lead-gen experts before. Pawan was the first one who actually understood real estate — the seller leads that came in were already warmed up.",
+      "name": "Aditya",
+      "role": "Builder, Noida",
+      "tag": ""
+    },
+    {
+      "quote": "The reporting alone is worth it. For the first time I can see exactly what every rupee is doing. My cost per lead dropped nearly in half and my appointment rate tripled.",
+      "name": "Priya K.",
+      "role": "Team Lead, Indore",
+      "tag": "2x appointment set rate"
+    }
+  ],
+  "aboutEyebrow": "ABOUT ME",
+  "aboutHeading": "I help clients turn cold markets into warm pipelines",
+  "aboutText": "Talent brings results, but a strong pipeline brings consistency. I'm Pawan Soni, and for eight years I've helped real estate clients solve the unpredictable lead cycle and build calendars that stay reliably full. I started in a brokerage back office, watched clients burn out chasing unqualified leads, and decided there had to be a better way. Today I build lead generation systems exclusively for real estate — combining targeted advertising, smart nurturing, and relentless optimization so the right prospects come to you.",
+  "aboutImage": "/uploads/1785066133670-582131149.png",
+  "experienceYears": "10",
+  "aboutChecklist": [
+    "10+ years in real estate marketing",
+    "Certified in Google & Meta ads",
+    "Worked with solo clients & 20-person teams",
+    "Featured speaker at 3 broker summits"
+  ],
+  "contactEyebrow": "LET'S TALK",
+  "contactHeading": "Book your free strategy session",
+  "contactSubtitle": "Tell me about your business and your goals. I'll personally review your pipeline and send you a tailored plan — no strings attached.",
+  "contactChecklist": [
+    "A 30-minute one-on-one strategy call",
+    "A custom lead-gen plan for your market",
+    "A free audit of your current pipeline",
+    "No pressure, no obligation"
+  ],
+  "whatsappNumber": "919999999999",
+  "phone": "",
+  "email": "",
+  "footerText": "High-quality lead generation for real estate professionals who are ready to fill their pipeline and close more deals."
+}

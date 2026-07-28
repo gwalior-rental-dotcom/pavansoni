@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= site.brandName %> — Real Estate Lead Generation</title>
+<meta name="description" content="High-quality lead generation for real estate professionals. Data-driven strategies that deliver consistent, qualified leads.">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <span class="brand-mark"><%= site.brandName.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase() %></span>
+      <%= site.brandName %>
+    </div>
+    <nav class="nav-links">
+      <% (site.navLinks || []).forEach((link, i) => { %>
+       <a href="#<%= ['about','why-me','process','results','testimonials'][i] || '#' %>"><%= link %></a>
+      <% }) %>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Book a Call</a>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="badge"><%= site.heroBadge %></span>
+      <h1><%= site.heroTitle %> <span class="highlight"><%= site.heroHighlight %></span>?</h1>
+      <p class="subtitle"><%= site.heroSubtitle %></p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary"><%= site.heroButtonText %> →</a>
+        <a href="#results" class="btn btn-outline"><%= site.heroSecondaryButtonText %></a>
+      </div>
+      <p class="trust"><span class="stars">★★★★★</span> <%= site.trustText %> <span class="dot-sep">·</span> <%= site.leadsGeneratedText %></p>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image">
+        <img src="<%= site.heroImage %>" alt="Hero" onerror="this.style.display='none'">
+      </div>
+      <div class="float-card top">
+        <div class="fc-label"><%= site.heroStat1Label %></div>
+        <div class="fc-value"><%= site.heroStat1Value %></div>
+        <div class="fc-sub"><%= site.heroStat1Sub %></div>
+      </div>
+      <div class="float-card bottom">
+        <div class="fc-label"><%= site.heroStat2Label %></div>
+        <div class="fc-value"><%= site.heroStat2Value %></div>
+        <div class="fc-sub"><%= site.heroStat2Sub %></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-me">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= site.problemEyebrow %></span>
+      <h2><%= site.problemHeading %> — <span class="highlight"><%= site.problemHeadingHighlight %></span></h2>
+      <p class="subtitle center"><%= site.problemSubtitle %></p>
+    </div>
+    <div class="cards-3">
+      <% (site.problemCards || []).forEach(card => { %>
+        <div class="card">
+          <div class="icon-circle"><%= card.icon %></div>
+          <h3><%= card.title %></h3>
+          <p><%= card.desc %></p>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="solution-box" style="margin-top: 40px;">
+      <div>
+        <span class="eyebrow"><%= site.solutionEyebrow %></span>
+        <h2><%= site.solutionHeading %></h2>
+        <p><%= site.solutionText %></p>
+      </div>
+      <ul class="checklist">
+        <% (site.solutionPoints || []).forEach(point => { %>
+          <li><span class="check">✓</span> <%= point %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= site.whyChooseEyebrow %></span>
+      <h2><%= site.whyChooseHeading %></h2>
+      <p class="subtitle center"><%= site.whyChooseSubtitle %></p>
+    </div>
+    <div class="cards-2">
+      <% (site.whyChooseCards || []).forEach(card => { %>
+        <div class="card">
+          <div class="icon-circle"><%= card.icon %></div>
+          <h3><%= card.title %></h3>
+          <p><%= card.desc %></p>
+          <% if (card.badge) { %><span class="pill"><%= card.badge %></span><% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-bg" id="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-dark"><%= site.processEyebrow %></span>
+      <h2 class="light"><%= site.processHeading %></h2>
+      <p class="process-subtitle center"><%= site.processSubtitle %></p>
+    </div>
+    <div class="cards-4">
+      <% (site.processSteps || []).forEach(step => { %>
+        <div class="dark-card">
+          <div class="step-top">
+            <div class="icon-circle"><%= step.icon %></div>
+            <span class="step-number"><%= step.number %></span>
+          </div>
+          <h3><%= step.title %></h3>
+          <p><%= step.desc %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= site.resultsEyebrow %></span>
+      <h2><%= site.resultsHeading %></h2>
+      <p class="subtitle center"><%= site.resultsSubtitle %></p>
+    </div>
+    <div class="stats-row">
+      <% (site.resultsStats || []).forEach(stat => { %>
+        <div class="stat-card">
+          <div class="icon-circle"><%= stat.icon %></div>
+          <div class="stat-value"><%= stat.value %></div>
+          <div class="stat-label"><%= stat.label %></div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="case-grid">
+      <% (site.caseStudies || []).forEach(cs => { %>
+        <div class="case-card">
+          <span class="trending-tag">Trending up</span>
+          <div class="case-tag"><%= cs.tag %></div>
+          <h3><%= cs.title %></h3>
+          <p class="case-sub"><%= cs.subtitle %></p>
+          <div class="mini-chart">
+            <% (cs.bars || []).forEach(h => { %>
+              <div class="bar" style="height: <%= h * 10 %>%"></div>
+            <% }) %>
+          </div>
+          <div class="case-stats">
+            <% (cs.stats || []).forEach(s => { %>
+              <div>
+                <span class="cs-label"><%= s.label %></span>
+                <strong><%= s.value %></strong>
+                <span class="cs-change"><%= s.change %></span>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><%= site.testimonialsEyebrow %></span>
+      <h2><%= site.testimonialsHeading %></h2>
+    </div>
+    <div class="cards-3">
+      <% (site.testimonials || []).forEach(t => { %>
+        <div class="card">
+          <div class="quote-mark">"</div>
+          <p class="quote"><%= t.quote %></p>
+          <div class="t-person">
+            <div class="avatar"><%= (t.name || '?')[0] %></div>
+            <div>
+              <div class="t-name"><%= t.name %></div>
+              <div class="role"><%= t.role %></div>
+            </div>
+          </div>
+          <% if (t.tag) { %><span class="pill green"><%= t.tag %></span><% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-grid">
+    <div class="about-image-wrap">
+      <div class="about-image">
+        <img src="<%= site.aboutImage %>" alt="About" onerror="this.style.display='none'">
+      </div>
+      <div class="about-badge">
+        <div class="ab-value"><%= site.experienceYears %> yrs</div>
+        <div class="ab-label">in real estate</div>
+      </div>
+    </div>
+    <div class="about-body">
+      <span class="eyebrow"><%= site.aboutEyebrow %></span>
+      <h2><%= site.aboutHeading %></h2>
+      <p><%= site.aboutText %></p>
+      <ul class="about-checklist">
+        <% (site.aboutChecklist || []).forEach(item => { %>
+          <li><span class="check">✓</span> <%= item %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-bg" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow on-dark"><%= site.contactEyebrow %></span>
+      <h2 class="light"><%= site.contactHeading %></h2>
+      <p class="light-subtle"><%= site.contactSubtitle %></p>
+      <ul class="contact-checklist">
+        <% (site.contactChecklist || []).forEach(item => { %>
+          <li><span class="check">✓</span> <%= item %></li>
+        <% }) %>
+      </ul>
+      <div class="contact-person">
+        <div class="avatar"><%= (site.brandName || '?')[0] %></div>
+        <div>
+          <div class="cp-name"><%= site.brandName %></div>
+          <div class="cp-sub">Lead Generation Specialist · Replies within 24 hours</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3>Talk To An Expert</h3>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" name="name" id="cf-name" placeholder="Full name" required>
+          <input type="email" name="email" id="cf-email" placeholder="Email" required>
+        </div>
+        <input type="tel" name="phone" id="cf-phone" placeholder="Phone number" required>
+        <textarea name="challenge" id="cf-challenge" placeholder="What's your biggest lead-gen challenge? (optional)" rows="3"></textarea>
+        <button type="submit" class="btn btn-primary full">Talk To An Expert →</button>
+        <p class="whatsapp-note">Opens WhatsApp with your details filled in.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><span class="brand-mark"><%= site.brandName.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase() %></span> <%= site.brandName %></div>
+      <p><%= site.footerText %></p>
+      <p class="copyright">© <%= new Date().getFullYear() %> <%= site.brandName %>. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#approach">Approach</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const challenge = document.getElementById('cf-challenge').value.trim();
+    const number = '<%= site.whatsappNumber %>';
+    let msg = `Hi, I'm ${name}. I'd like to talk about lead generation.\nEmail: ${email}\nPhone: ${phone}`;
+    if (challenge) msg += `\nChallenge: ${challenge}`;
+    window.open('https://wa.me/' + number + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+</script>
+
+</body>
+</html>
